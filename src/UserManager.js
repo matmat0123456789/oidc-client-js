@@ -288,6 +288,9 @@ export class UserManager extends OidcClient {
     }
 
     signinCallback(url) {
+        console.log("test");
+        alert("test");
+        
         return this.readSigninResponseState(url).then(({state, response}) => {
             if (state.request_type === "si:r") {
                 return this.signinRedirectCallback(url);
